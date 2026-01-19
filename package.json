@@ -14,7 +14,7 @@
     "social",
     "osint"
   ],
-  "author": "",
+  "author": "Khin Maung Win",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
