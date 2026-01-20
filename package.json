@@ -12,11 +12,20 @@
   "keywords": [
     "cli",
     "social",
-    "osint"
+    "osint",
+    "username",
+    "checker",
+    "osint-tool"
   ],
   "author": "Khin Maung Win",
   "license": "ISC",
   "type": "commonjs",
+  "files": [
+    "index.js",
+    "actions/",
+    "utils/",
+    "README.md"
+  ],
   "dependencies": {
     "axios": "^1.13.2",
     "chalk": "^5.6.2"
