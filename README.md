@@ -78,7 +78,8 @@ Target username: kokhinmaungwin
 [b] Internet username
 [c] Other info
 [d] Full report
-[e] Exit
+[e] Username availability
+[f] Exit
 ```
 
 - Menu Options Explained
@@ -89,7 +90,8 @@ Target username: kokhinmaungwin
 - [b]	:Check internet platforms (Reddit, Medium, Dev.to, StackOverflow, Pastebin, Keybase)
 - [c]	:Username intelligence (metadata, variations, quick presence checks)
 - [d]	:Generate and save a full correlation report (JSON)
-- [e]	:Exit the program
+- [e] :Check username availability across popular platforms
+- [f]	:Exit the program
 
 
 ---
@@ -124,6 +126,15 @@ Select option: d
 💾 Saved report   : ./reports/kokhinmaungwin-123456.json
 
 Select option: e
+🧪 Username availability check for: kokhinmaungwin
+
+✔ github       : Taken
+? twitter      : Unknown
+? instagram    : Unknown
+✖ facebook     : Available
+✖ reddit       : Available
+
+Select option: f
 Bye 👋
 ```
 
