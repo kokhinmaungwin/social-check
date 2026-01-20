@@ -1,12 +1,31 @@
-# social-check
+## social-check
 
-A simple CLI tool to check social media accounts, internet presence, and username intelligence for any given username.
+A simple OSINT-style CLI tool to check publicly available social media accounts, internet presence, and username intelligence for any given username.
+
+> ⚠️ This tool uses only publicly available information and is intended for educational, research, and ethical OSINT purposes.  
+> ⚠️ Misuse of this tool for illegal or unethical activities is strictly discouraged.
 
 ---
 
-## Installation
+## ✨ Features
 
-### 1. Clone the repository (if using from source)
+- 🔍 Check social media accounts (GitHub, Twitter, Instagram, Facebook, Telegram)
+
+- 🌐 Check internet presence (Reddit, Medium, Dev.to, StackOverflow, Pastebin, Keybase)
+
+- 🧠 Username intelligence analysis (metadata, patterns, variations)
+
+- 📊 Generate a combined correlation report (JSON)
+
+- 💾 All reports are saved locally on your machine
+
+
+
+---
+
+## 📦 Installation
+
+- Option 1: Install from source (recommended for development)
 
 ```bash
 git clone https://github.com/yourusername/social-check.git
@@ -15,11 +34,19 @@ npm install
 chmod +x index.js
 npm link
 ```
-- npm install will install all dependencies.
-- chmod +x index.js makes the main script executable.
-- npm link links the package globally so you can run social-check from anywhere.
 
-### 2. Or install globally via npm (if published)
+- What these commands do:
+
+- npm install → installs required dependencies
+
+- chmod +x index.js → makes the CLI executable
+
+- npm link → allows running social-check globally
+
+
+---
+
+- Option 2: Install globally via npm (if published)
 
 ```bash
 npm install -g social-check
@@ -27,21 +54,22 @@ npm install -g social-check
 
 ---
 
-## Usage
+## 🚀 Usage
 
 ```bash
 social-check <username>
 ```
-- Example:
+- Example
+
 ```bash
 social-check kokhinmaungwin
 ```
 
 ---
 
-## Interactive Menu Options
+## 🧭 Interactive Menu
 
--After running the command, you will see a menu like this:
+- After running the command, you will see an interactive menu:
 
 ```bash
 Target username: kokhinmaungwin
@@ -51,88 +79,49 @@ Target username: kokhinmaungwin
 [c] Other info
 [d] Full report
 [e] Exit
-
-Select option:
 ```
-# What each option does:
 
-- a : Scan and show social media accounts (GitHub, Twitter, Instagram, Facebook, Telegram)
-- b : Check internet presence on other platforms (Reddit, Medium, Dev.to, StackOverflow, Pastebin, Keybase)
-- c : Show username intelligence, metadata, and username variations with presence check
-- d : Generate and save a full correlation report of all collected data so far
-- e : Exit the program
+- Menu Options Explained
+
+- Option	Description
+
+- [a] :Scan social media platforms (GitHub, Twitter, Instagram, Facebook, Telegram)
+- [b]	:Check internet platforms (Reddit, Medium, Dev.to, StackOverflow, Pastebin, Keybase)
+- [c]	:Username intelligence (metadata, variations, quick presence checks)
+- [d]	:Generate and save a full correlation report (JSON)
+- [e]	:Exit the program
+
 
 ---
 
-## Example Workflow
+## 🧪 Example Workflow
 
 ```bash
 social-check kokhinmaungwin
-
-Target username: kokhinmaungwin
-
-[a] Social accounts
-[b] Internet username
-[c] Other info
-[d] Full report
-[e] Exit
 
 Select option: a
-
-🔍 Social scan for: kokhinmaungwin
 ✔ github     : https://github.com/kokhinmaungwin
 ✖ twitter    : Not found
-✖ instagram  : Not found
-✖ facebook   : Not found
-✖ telegram   : Not found
 
 Select option: b
-
-🌐 Internet presence for: kokhinmaungwin
-✖ reddit         : Not found
-✖ medium         : Not found
-✖ devto          : Not found
-✖ stackoverflow  : Not found
-✖ pastebin       : Not found
-✖ keybase        : Not found
+✖ reddit     : Not found
+✖ medium     : Not found
 
 Select option: c
-
-🧠 Username intelligence for: kokhinmaungwin
 📊 Metadata
-  • length         : 14
-  • hasNumber      : false
-  • hasUnderscore  : false
-  • hasDot         : false
-  • lowercaseOnly  : true
-  • pattern        : simple
+• length : 14
+• pattern: simple
 
-🔁 Generated variations (11)
-  - kokhinmaungwin
-  - kokhinmaungwin_
-  - _kokhinmaungwin
-  - kokhinmaungwin123
-  - kokhinmaungwin01
-  - kokhinmaungwin.
-  - kokhinmaungwin.dev
-  - kokhinmaungwin-dev
-  - kokhinmaungwin-official
-  - kokhinmaungwin_official
-  - kokhinmaungwin__
-
-⚡ Quick presence check (GitHub heuristic)
-✔ kokhinmaungwin       : Possible usage
-✖ kokhinmaungwin_      : Free / unknown
-... (other entries)
+🔁 Variations (11)
+- kokhinmaungwin
+- kokhinmaungwin.dev
 
 Select option: d
-
 📊 Final Correlation Report
-────────────────────────────
 👤 Username       : kokhinmaungwin
 🔗 Accounts found : 2
 🔁 Variations     : 11
-💾 Saved report   : /path/to/your/social-check/reports/kokhinmaungwin-123456789.json
+💾 Saved report   : ./reports/kokhinmaungwin-123456.json
 
 Select option: e
 Bye 👋
@@ -140,30 +129,79 @@ Bye 👋
 
 ---
 
-## Notes
+## 📁 Reports
 
-- Reports are saved in the /reports directory in the project folder.
-- You can rerun scans any time by selecting the menu options.
-- To overwrite any npm linked files if you get errors, use:
+- Reports are saved in the ./reports directory
 
+- Format: JSON
+
+- File name pattern:
+
+```bash
+<username>-<timestamp>.json
+```
+
+---
+
+## 🔐 Privacy & Security
+
+✅ This tool only accesses publicly available web pages
+
+❌ It does NOT:
+
+- Collect passwords, emails, phone numbers
+
+- Access private or authenticated APIs
+
+- Track users
+
+- Upload data remotely
+
+
+All scans are performed using simple HTTP requests to public URLs.
+
+
+---
+
+## ⚖️ Disclaimer (IMPORTANT)
+
+This tool is provided for educational, research, and self-auditing purposes only.
+
+- Do NOT use this tool for harassment, stalking, doxxing, or illegal surveillance
+
+- Only scan usernames you own or have permission to investigate
+
+- The author is not responsible for misuse or violations of privacy laws
+
+
+By using this tool, you agree to take full responsibility for how it is used.
+
+
+---
+
+## 🛠 Development Notes
+
+- Node.js >= 18 recommended
+
+- Uses axios for HTTP requests
+
+- No database, no remote logging
+
+
+To relink after changes:
 ```bash
 npm link --force
 ```
 
 ---
 
-## Disclaimer
-
-This tool only checks publicly available information.
-It does NOT collect private data, passwords, emails, or personal messages.
-
-Use this tool responsibly and ethically.
-The author is not responsible for misuse or violations of privacy laws.
-
----
-
-## License
+## 📜 License
 
 ISC License © Khin Maung Win
 
+
 ---
+
+## ⭐ Final Note
+
+If you are learning OSINT, CLI tools, or Node.js automation — this project is a safe and ethical starting point when used responsibly.
