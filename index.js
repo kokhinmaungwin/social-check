@@ -19,6 +19,8 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+let collected = {}; // <-- Declare collected object here
+
 console.log(`\nTarget username: ${username}\n`);
 console.log("[a] Social accounts");
 console.log("[b] Internet username");
@@ -29,13 +31,13 @@ console.log("[e] Exit\n");
 rl.question("Select option: ", async (choice) => {
   switch (choice.toLowerCase()) {
     case "a":
-      await runSocial(username);
+      collected.social = await runSocial(username);
       break;
     case "b":
-      await runInternet(username);
+      collected.internet = await runInternet(username);
       break;
     case "c":
-      await runIntel(username);
+      collected.intel = await runIntel(username);
       break;
     case "d":
       await runReport(username, collected);
