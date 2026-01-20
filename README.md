@@ -67,7 +67,7 @@ Select option:
 ## Example Workflow
 
 ```bash
-$ social-check kokhinmaungwin
+social-check kokhinmaungwin
 
 Target username: kokhinmaungwin
 
@@ -145,7 +145,10 @@ Bye 👋
 - Reports are saved in the /reports directory in the project folder.
 - You can rerun scans any time by selecting the menu options.
 - To overwrite any npm linked files if you get errors, use:
+
+```bash
 npm link --force
+```
 
 ---
 
