@@ -63,19 +63,21 @@ async function runIntel(username) {
   // ⚡ Quick presence test
   console.log("\n⚡ Quick presence check (GitHub heuristic)\n");
 
+  const presence = {}; 
   for (const v of variations.slice(0, 8)) {
     const exists = await quickExistCheck(v);
+    presence[v] = exists;  // result ကို presence object ထဲသိမ်း
     console.log(
       exists
         ? `✔ ${v.padEnd(20)} : Possible usage`
         : `✖ ${v.padEnd(20)} : Free / unknown`
     );
   }
+
   return {
     metadata: meta,
     variations,
-    presence,
+    presence,  
   };
 }
-
 module.exports = runIntel;
