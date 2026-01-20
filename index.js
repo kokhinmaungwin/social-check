@@ -2,6 +2,9 @@
 
 const readline = require("readline");
 const runSocial = require("./actions/social");
+const runInternet = require("./actions/internet");
+const runIntel = require("./actions/intel");
+const runReport = require("./actions/report");
 
 const args = process.argv.slice(2);
 const username = args.find(a => !a.startsWith("-"));
@@ -28,12 +31,15 @@ rl.question("Select option: ", async (choice) => {
       await runSocial(username);
       break;
     case "b":
-      console.log("B: coming soon");
+      await runInternet(username);
       break;
     case "c":
-      console.log("C: coming soon");
+      await runIntel(username);
       break;
     case "d":
+      await runReport(username, collected);
+      break;
+    case "e":
       console.log("Bye 👋");
       process.exit(0);
     default:
