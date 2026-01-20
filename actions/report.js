@@ -13,6 +13,7 @@ async function runReport(username, data) {
       totalPlatforms: Object.keys(data.social || {}).length,
       foundAccounts: Object.values(data.social || {}).filter(Boolean).length,
       variationsChecked: data.intel?.variations?.length || 0,
+      availabilityChecked: data.availability ? Object.keys(data.availability).length : 0,
     },
     data,
   };
