@@ -71,6 +71,11 @@ async function runIntel(username) {
         : `✖ ${v.padEnd(20)} : Free / unknown`
     );
   }
+  return {
+    metadata: meta,
+    variations,
+    presence,
+  };
 }
 
 module.exports = runIntel;
