@@ -23,7 +23,8 @@ console.log(`\nTarget username: ${username}\n`);
 console.log("[a] Social accounts");
 console.log("[b] Internet username");
 console.log("[c] Other info");
-console.log("[d] Exit\n");
+console.log("[d] Full report");
+console.log("[e] Exit\n");
 
 rl.question("Select option: ", async (choice) => {
   switch (choice.toLowerCase()) {
