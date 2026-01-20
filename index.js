@@ -45,12 +45,14 @@ if (args.includes("--version")) {
 /* =========================
    Username
 ========================= */
-const username = args.find(a => !a.startsWith("-"));
+const args = process.argv.slice(2);
 
-if (!username) {
+if (args.length === 0) {
   console.log("Usage: social-check <username>");
   process.exit(1);
 }
+
+const username = args.join("").trim();
 
 /* =========================
    Modes
