@@ -75,6 +75,7 @@ async function runInternet(username) {
         : `✖ ${r.platform.padEnd(14)} : Not found`
     );
   });
+  return results;
 }
 
 module.exports = runInternet;
