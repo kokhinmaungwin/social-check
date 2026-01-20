@@ -19,34 +19,43 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-let collected = {}; // <-- Declare collected object here
+let collected = {};
 
-console.log(`\nTarget username: ${username}\n`);
-console.log("[a] Social accounts");
-console.log("[b] Internet username");
-console.log("[c] Other info");
-console.log("[d] Full report");
-console.log("[e] Exit\n");
+function showMenu() {
+  console.log(`\nTarget username: ${username}\n`);
+  console.log("[a] Social accounts");
+  console.log("[b] Internet username");
+  console.log("[c] Other info");
+  console.log("[d] Full report");
+  console.log("[e] Exit\n");
 
-rl.question("Select option: ", async (choice) => {
-  switch (choice.toLowerCase()) {
-    case "a":
-      collected.social = await runSocial(username);
-      break;
-    case "b":
-      collected.internet = await runInternet(username);
-      break;
-    case "c":
-      collected.intel = await runIntel(username);
-      break;
-    case "d":
-      await runReport(username, collected);
-      break;
-    case "e":
-      console.log("Bye 👋");
-      process.exit(0);
-    default:
-      console.log("Invalid option");
-  }
-  rl.close();
-});
+  rl.question("Select option: ", async (choice) => {
+    switch (choice.toLowerCase()) {
+      case "a":
+        collected.social = await runSocial(username);
+        showMenu();
+        break;
+      case "b":
+        collected.internet = await runInternet(username);
+        showMenu();
+        break;
+      case "c":
+        collected.intel = await runIntel(username);
+        showMenu();
+        break;
+      case "d":
+        await runReport(username, collected);
+        showMenu();
+        break;
+      case "e":
+        console.log("Bye 👋");
+        rl.close();
+        process.exit(0);
+      default:
+        console.log("Invalid option");
+        showMenu();
+    }
+  });
+}
+
+showMenu();
