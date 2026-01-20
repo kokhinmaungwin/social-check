@@ -1,4 +1,4 @@
-const axios = require("axios");
+const http = require("../utils/http");
 const fs = require("fs");
 const path = require("path");
 
@@ -37,7 +37,7 @@ function getPlatforms(username) {
 
 async function checkAccount(name, cfg) {
   try {
-    const head = await axios.head(cfg.url, {
+    const head = await http.head(cfg.url, {
       timeout: 4000,
       validateStatus: () => true,
       headers: { "User-Agent": UA },
@@ -47,7 +47,7 @@ async function checkAccount(name, cfg) {
       return { platform: name, exists: false };
     }
 
-    const res = await axios.get(cfg.url, {
+    const res = await http.get(cfg.url, {
       timeout: 6000,
       validateStatus: () => true,
       headers: { "User-Agent": UA },
