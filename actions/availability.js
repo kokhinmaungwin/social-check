@@ -12,17 +12,23 @@ const platforms = {
 
 function check(url) {
   return new Promise((resolve) => {
-    https
-      .get(url, (res) => {
-        if (res.statusCode === 200) {
-          resolve("Taken");
-        } else if (res.statusCode === 404) {
-          resolve("Available");
-        } else {
-          resolve("Unknown");
-        }
-      })
-      .on("error", () => resolve("Unknown"));
+    const req = https.get(url, (res) => {
+      if (res.statusCode === 200) {
+        resolve("Taken");
+      } else if (res.statusCode === 404) {
+        resolve("Available");
+      } else {
+        resolve("Unknown");
+      }
+      res.resume(); // consume response data to free up memory
+    });
+
+    req.setTimeout(5000, () => {
+      req.destroy();
+      resolve("Unknown");
+    });
+
+    req.on("error", () => resolve("Unknown"));
   });
 }
 
