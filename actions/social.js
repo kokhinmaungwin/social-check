@@ -103,6 +103,7 @@ async function runSocial(username, options = {}) {
     fs.writeFileSync(options.output, content);
     console.log(`\n💾 Saved to ${options.output}`);
   }
+  return jsonResult;
 }
 
 module.exports = runSocial;
