@@ -152,6 +152,16 @@ npm link --force
 
 ---
 
+## Disclaimer
+
+This tool only checks publicly available information.
+It does NOT collect private data, passwords, emails, or personal messages.
+
+Use this tool responsibly and ethically.
+The author is not responsible for misuse or violations of privacy laws.
+
+---
+
 ## License
 
 ISC License © Khin Maung Win
