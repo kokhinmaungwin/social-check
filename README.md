@@ -1,3 +1,19 @@
+# Project Title
+
+Welcome to my project!
+
+## Banner
+
+```plaintext
+ _   _      _ _
+| | | |    | | |
+| |_| | ___| | | ___
+|  _  |/ _ \ | |/ _ \
+| | | |  __/ | | (_) |
+\_| |_/\___|_|_|\___/
+```
+---
+
 ## social-check
 
 A simple OSINT-style CLI tool to check publicly available social media accounts, internet presence, and username intelligence for any given username.
