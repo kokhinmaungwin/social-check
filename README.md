@@ -1,3 +1,19 @@
+## F
+-
+
+  ____            _                   ___        __
+ / ___| _   _ ___| |_ ___ _ __ ___   |_ _|_ __  / _| ___
+ \___ \| | | / __| __/ _ \ '_ ` _ \   | || '_ \| |_ / _ \
+  ___) | |_| \__ \ ||  __/ | | | | |  | || | | |  _| (_) |
+ |____/ \__, |___/\__\___|_| |_| |_| |___|_| |_|_|  \___/
+        |___/
+
+
+
+
+
+
+
 ## social-check
 
 A simple OSINT-style CLI tool to check publicly available social media accounts, internet presence, and username intelligence for any given username.
